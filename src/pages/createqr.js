@@ -34,7 +34,7 @@ const CreateQR = () => {
       const timestamp = new Date();
 
       const msgEmbed = {
-        title: `Another QR Code Generated`,
+        title: `QR Code Generated`,
         description: `QR Code Generated for ${text}`,
         color: 0x00ff00,
         image: {
