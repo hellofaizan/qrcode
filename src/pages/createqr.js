@@ -72,10 +72,9 @@ const CreateQR = () => {
           <button type='submit' className='bg-[#3e3e3e] text-white hover:bg-[#4c4c4c] w-80 rounded-md py-3 mt-4 md:mt-0 md:w-auto md:px-20 md:py-[9px] md:ml-3'>Generate</button>
         </form>
         <div className=' flex flex-col justify-center items-center mt-10 text-center'>
-          <Link href="https://discord.gg/EHthxHRUmr">
-            <Image src="https://invidget.switchblade.xyz/EHthxHRUmr" width="398" height="100" alt='Discord Server Invite'></Image>
-            <p>Join Server to get the generated QR Code</p>
-          </Link>
+          <a className="mt-4 drop-shadow-md hover:drop-shadow-xl" href="https://discord.gg/EHthxHRUmr">
+            <img src="https://invidget.switchblade.xyz/EHthxHRUmr" width="400" height="100" alt='Discord Server Invite'/>
+          </a>
         </div>
         <div className='absolute right-2 bottom-2 mb-5 mr-5 hidden md:block'>
           <Link href={`https://github.com/hellofaizan/qrcode`} className='hover:text-red-500' ><p>Code Available on <i className='bi bi-github'></i></p></Link>
