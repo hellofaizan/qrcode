@@ -73,7 +73,7 @@ const CreateQR = () => {
         </form>
         <div className=' flex flex-col justify-center items-center mt-10 text-center'>
           <Link href="https://discord.gg/EHthxHRUmr">
-            <Image src="https://invidget.switchblade.xyz/EHthxHRUmr" width="380" height="100" alt='Discord Server Invite' />
+            <Image src="https://invidget.switchblade.xyz/EHthxHRUmr" width="398" height="100" alt='Discord Server Invite'></Image>
             <p>Join Server to get the generated QR Code</p>
           </Link>
         </div>
