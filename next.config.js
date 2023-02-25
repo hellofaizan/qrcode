@@ -18,6 +18,12 @@ module.exports = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'invidget.switchblade.xyz',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
 }

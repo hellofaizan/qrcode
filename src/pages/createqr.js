@@ -2,6 +2,7 @@ import React from 'react'
 import Router, { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react'
 import Image from 'next/image'
+import Link from 'next/link';
 
 const CreateQR = () => {
   const router = useRouter();
@@ -51,10 +52,10 @@ const CreateQR = () => {
       response2.send(JSON.stringify(params));
       response2.onload = () => {
         if (response2.status >= 200 && response2.status < 400) {
-          
+
           alert("QR Code successfully and Send to Discord");
         } else {
-          alert("Something went wrong! "+ response2.status + " " + response2.statusText + "");
+          alert("Something went wrong! " + response2.status + " " + response2.statusText + "");
         }
       }
     } else {
@@ -70,6 +71,15 @@ const CreateQR = () => {
           <input required placeholder='Enter Text' onChange={e => (setText(e.target.value))} autoFocus id='text' name='text' className='bg-transparent border rounded-md px-4 py-2 md:w-1/4 w-80' type='text' />
           <button type='submit' className='bg-[#3e3e3e] text-white hover:bg-[#4c4c4c] w-80 rounded-md py-3 mt-4 md:mt-0 md:w-auto md:px-20 md:py-[9px] md:ml-3'>Generate</button>
         </form>
+        <div className=' flex flex-col justify-center items-center mt-10 text-center'>
+          <Link href="https://discord.gg/EHthxHRUmr">
+            <Image src="https://invidget.switchblade.xyz/EHthxHRUmr" width="380" height="100" alt='Discord Server Invite' />
+            <p>Join Server to get the generated QR Code</p>
+          </Link>
+        </div>
+        <div className='absolute right-2 bottom-2 mb-5 mr-5 hidden md:block'>
+          <Link href={`https://github.com/hellofaizan/qrcode`} className='hover:text-red-500' ><p>Code Available on <i className='bi bi-github'></i></p></Link>
+        </div>
       </div>
     </>
   )
