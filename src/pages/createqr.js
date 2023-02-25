@@ -68,7 +68,7 @@ const CreateQR = () => {
       <div className='w-screen p-3'>
         <h2 className='text-2xl md:text-5xl justify-center items-center flex mt-10'>Generate New QR Code</h2>
         <form onSubmit={generateQR} className='flex md:flex-row flex-col mt-10 justify-center items-center'>
-          <input required placeholder='Enter Text' onChange={e => (setText(e.target.value))} autoFocus id='text' name='text' className='bg-transparent border rounded-md px-4 py-2 md:w-1/4 w-80' type='text' />
+          <input required placeholder='Enter Text or URL' onChange={e => (setText(e.target.value))} autoFocus id='text' name='text' className='bg-transparent border rounded-md px-4 py-2 md:w-1/4 w-80' type='text' />
           <button type='submit' className='bg-[#3e3e3e] text-white hover:bg-[#4c4c4c] w-80 rounded-md py-3 mt-4 md:mt-0 md:w-auto md:px-20 md:py-[9px] md:ml-3'>Generate</button>
         </form>
         <div className=' flex flex-col justify-center items-center mt-10 text-center'>
