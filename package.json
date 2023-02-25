@@ -14,11 +14,10 @@
     "dotenv": "^16.0.3",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "jsonwebtoken": "^9.0.0",
     "next": "13.1.6",
     "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "react-native-svg": "^13.8.0",
-    "react-qr-code": "^2.0.11"
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
