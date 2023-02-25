@@ -1,39 +1,43 @@
+import Link from 'next/link';
 import React from 'react'
-import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import Router, { useRouter } from 'next/router';
+import { useRef, useEffect } from 'react'
 
-const Home = () => {  
-  const [data, setData] = useState(null);
-  const [isLoading, setLoading] = useState(false);
+const Home = () => {
+  const router = useRouter();
+  const password = useRef("");
+  const pass = process.env.NEXT_PUBLIC_PASSWWORD
+
+  const passwordMatch = async (e) => {
+    e.preventDefault();
+    if (password.current === pass) {
+      // Save password to local storage as a token
+      if(typeof window !== 'undefined') {
+        return window.localStorage.setItem("token")
+      }
+    } else {
+      alert("Incorrect Password")
+    }
+  }
 
   useEffect(() => {
-    setLoading(true);
-    fetch('https://api.npoint.io/4a8d62649d30ab3f091e', {
-      method: 'GET',
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-        console.log(data);
-      });
-  }, []);
+    // Check if password is saved in local storage
+    // If it is, redirect to /dashboard
+    if (localStorage.getItem("token")) {
+      Router.push("/createqr")
+    }
+  }, [])
 
-  if (isLoading) return <div className='w-screen h-screen flex justify-center items-center'>
-    <Image src={"/faizan.png"} width={60} height={60} alt="HelloFaizan Splach Screen Logo"></Image>
-  </div>
 
-  if (!data) return <div className='w-screen h-screen flex justify-center items-center'>
-    <Image src={"/faizan.png"} width={60} height={60} alt="HelloFaizan Splach Screen Logo"></Image>
-  </div>
 
   return (
     <>
-    <div>
-      <p className="text-3xl font-bold underline">
-        Hello World
-      </p>
-    </div>
+      <form onSubmit={passwordMatch} autoFocus>
+        <div className='mt-10 ml-10 flex font-mono text-lg'>
+          <p className='text-[#1cff36]'>Password: </p>
+          <input ref={password} required maxLength={20} onChange={e => (password.current = e.target.value)} autoFocus className='ml-2 bg-transparent focus:outline-none text-[#1cff36]' type='password' />
+        </div>
+      </form>
     </>
   )
 }
