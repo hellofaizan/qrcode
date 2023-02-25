@@ -28,7 +28,7 @@ const CreateQR = () => {
       console.log(response)
       const response2 = new XMLHttpRequest();
 
-      response2.open("POST", process.env.NEXT_PUBLIC_WEBHOOK_URL);
+      response2.open("POST", process.env.WEBHOOK_URL);
       response2.setRequestHeader('Content-type', 'application/json');
 
       const timestamp = new Date();
