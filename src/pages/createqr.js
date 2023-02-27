@@ -1,13 +1,11 @@
 import React from 'react'
 import Router, { useRouter } from 'next/router';
 import { useRef, useEffect } from 'react'
-import Image from 'next/image'
 import Link from 'next/link';
 
 const CreateQR = () => {
   const router = useRouter();
   const [text, setText] = React.useState("https://l.hellofaizan.me/")
-  const img = useRef("")
   // const logout = async (e) => {
   //   e.preventDefault();
   //   localStorage.removeItem("token")
