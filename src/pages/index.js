@@ -9,6 +9,7 @@ import QrCard from './components/qrcard';
 const Home = ({ qrs }) => {
   const router = useRouter();
   const [text, setText] = React.useState("https://l.hellofaizan.me/")
+  const [form, setForm] = React.useState({})
   // const logout = async (e) => {
   //   e.preventDefault();
   //   localStorage.removeItem("token")
@@ -33,8 +34,13 @@ const Home = ({ qrs }) => {
     })
     let response = await res.json()
     if (response.success) {
-      console.log(response)
       // Sending data to /api/addqr
+      setForm({
+        ...form,
+        qrCode: response.qr,
+        qrName: text
+      })
+      console.log(form)
       
     } else {
       alert("Error generating QR Code")
